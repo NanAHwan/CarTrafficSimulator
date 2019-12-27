@@ -2,15 +2,15 @@ public class Simulator {
     public static void main(String[] args) throws InterruptedException,NullPointerException {
 
         Vehicle vehicle;
-        vehicle=new Vehicle("Car",0,null);
+        vehicle=new Vehicle("Car 1",0,null);
 
         TrafficLight t1=new TrafficLight("Red",5.0);
         Boolean end=false;
 
         Road road;
-        Road r3=new Road("r3",6,vehicle,null,t1);
-        Road r2=new Road("r2",5,vehicle,r3,t1);
-        Road r1=new Road("r1",4,vehicle,r2,t1);
+        Road r3=new Road("Road 3",6,vehicle,null,t1);
+        Road r2=new Road("Road 2",5,vehicle,r3,t1);
+        Road r1=new Road("Road 3",4,vehicle,r2,t1);
 
         //Put Vehicle on the Road
         vehicle.drivingRoad=r1;
