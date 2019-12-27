@@ -5,7 +5,7 @@ public class Road {
     Vehicle vehicle=new Vehicle();
     TrafficLight trafficLight=new TrafficLight();
     Road nextRoad;
-    boolean reached=false;
+    boolean isDestination=false;
 
     public Road(String name,int length,Vehicle vehicle, Road nextRoad,TrafficLight trafficLight) {
         this.object=new Object[length];
@@ -26,7 +26,7 @@ public class Road {
             if(trafficLight.lightColor.equalsIgnoreCase("Green")) {
                 vehicle.currentPosition = 0;
                 vehicle.drivingRoad = nextRoad;
-                reached = true;
+                isDestination = true;
             }
             else{
                 vehicle.currentPosition-=1;

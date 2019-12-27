@@ -5,7 +5,7 @@ public class Simulator {
         vehicle=new Vehicle("Car 1",0,null);
 
         TrafficLight t1=new TrafficLight("Red",5.0);
-        Boolean end=false;
+        Boolean destination=false;
 
         Road road;
         Road r3=new Road("Road 3",6,vehicle,null,t1);
@@ -16,7 +16,7 @@ public class Simulator {
         vehicle.drivingRoad=r1;
         road=vehicle.drivingRoad;
 
-        while(end==false){ //the simulator will keep running until user choose to end
+        while(destination==false){ //the simulator will keep running until user choose to end
             t1.operateColor();
             System.out.println("Vehicle:"+vehicle.name+" Road:"+vehicle.drivingRoad.name+" Position:"+vehicle.drivingRoad+" Traffic Light: "+t1.lightColor);
             vehicle.moveVehicle();
