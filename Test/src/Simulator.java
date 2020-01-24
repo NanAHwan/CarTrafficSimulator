@@ -1,32 +1,34 @@
 public class Simulator {
     public static void main(String[] args) throws InterruptedException,NullPointerException {
 
+        Boolean end=false; //boolean to end the simulator or not
+        //Declaring Vehicle variable
         Vehicle vehicle;
-        vehicle=new Vehicle("Car 1",0,null);
+        vehicle=new Vehicle("Car",0,null);
 
+        //Declaring traffic variable
         TrafficLight t1=new TrafficLight("Red",5.0);
-        Boolean destination=false;
 
+        //Declaring Road variable
         Road road;
-        Road r3=new Road("Road 3",6,vehicle,null,t1);
-        Road r2=new Road("Road 2",5,vehicle,r3,t1);
-        Road r1=new Road("Road 3",4,vehicle,r2,t1);
+        Road r3=new Road("r3",6,vehicle,null,t1);
+        Road r2=new Road("r2",5,vehicle,r3,t1);
+        Road r1=new Road("r1",4,vehicle,r2,t1);
 
         //Put Vehicle on the Road
-        vehicle.drivingRoad=r1;
-        road=vehicle.drivingRoad;
+        vehicle.currentRoad=r1;
+        road=vehicle.currentRoad;
 
-        while(destination==false){ //the simulator will keep running until user choose to end
-            t1.operateColor();
-            System.out.println("Vehicle:"+vehicle.name+" Road:"+vehicle.drivingRoad.name+" Position:"+vehicle.drivingRoad+" Traffic Light: "+t1.lightColor);
-            vehicle.moveVehicle();
-            road.updateStatus(vehicle);
+        while(end==false){ //the simulator will keep running until user choose to end
+            t1.operate();
+            System.out.println("Vehicle:"+vehicle.name+" Road:"+vehicle.currentRoad.name+" Position:"+vehicle.position+" Traffic Light: "+t1.color);
+            vehicle.move();
+            road.update(vehicle);
             if(road.reached==true)
             {
-
-                if(road.nextRoad==null){
-                    road=vehicle.drivingRoad;
-                }
+                if(road.connectedRoad == null)
+                    end = true;
+                road=vehicle.currentRoad;
             }
             Thread.sleep(2000);
         }

@@ -1,17 +1,17 @@
 public class Vehicle {
     String name;
-    int currentPosition;
-    Road drivingRoad;
+    int position;
+    Road currentRoad;
     public Vehicle() {
     }
 
-    public Vehicle(String name, int currentPosition, Road drivingRoad) {
+    public Vehicle(String name, int position, Road currentRoad) {
         this.name = name;
-        this.currentPosition = currentPosition;
-        this.drivingRoad = drivingRoad;
+        this.position = position;
+        this.currentRoad = currentRoad;
     }
 
-    public void moveVehicle(){
-        this.currentPosition+=1;
+    public void move(){
+        this.position+=1;
     }
 }

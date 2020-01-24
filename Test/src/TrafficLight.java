@@ -1,18 +1,18 @@
 public class TrafficLight {
-    String lightColor;
+    String color;
     double rateOfChange;
 
     public TrafficLight() {
     }
 
     public TrafficLight(String color, double rateOfChange){
-        this.lightColor=color;
+        this.color=color;
         this.rateOfChange=rateOfChange;
     }
-    public void operateColor(){
+    public void operate(){
         if(rateOfChange<(Math.random()*((1.0-10.0)+1))+10.0)
-            this.lightColor="Red";
+            this.color="Red";
         else
-            this.lightColor="Green";
+            this.color="Green";
     }
 }
