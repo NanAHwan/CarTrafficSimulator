@@ -9,7 +9,6 @@ import javax.swing.*;
 public class Test extends JFrame implements ActionListener{
     static Simulation panel;
     //static TestRotation ts;
-    //static set setFrame;
 
     JMenuBar menu;
     JMenu simulate, edit;
@@ -54,37 +53,20 @@ public class Test extends JFrame implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()== startSimulate) {
+        if (e.getSource() == startSimulate) {
             panel = new Simulation();
-
             this.setContentPane(panel);
             this.setVisible(true);
-        }else if(e.getSource()== exit) {
+        } else if (e.getSource() == exit) {
             System.exit(0);
-        }
-//        else if(e.getSource()== addCar) {
-//            if(panel==null)
-//                JOptionPane.showMessageDialog(this, "请开始模拟再生成小车", "错误", JOptionPane.INFORMATION_MESSAGE);
-//            //else panel.addcar();
-//        }
-        else if(e.getSource()== stop)
-        {
-            if(panel==null)
-               JOptionPane.showMessageDialog(this, "Please start simulation before stop", "error", JOptionPane.INFORMATION_MESSAGE);
-            else
-            {
+        } else if (e.getSource() == stop) {
+            if (panel == null)
+                JOptionPane.showMessageDialog(this, "Please start simulation before stop", "error", JOptionPane.INFORMATION_MESSAGE);
+            else {
                 panel.setVisible(false);
             }
 
         }
-//        if(e.getSource()== rate) {
-//            ts = new TestRotation();
-//
-//            this.setContentPane(ts);
-//            this.setVisible(true);
-//        }else if(e.getSource()== exit) {
-//            System.exit(0);
-//        }
     }
     public static void main(String[] args)
     {

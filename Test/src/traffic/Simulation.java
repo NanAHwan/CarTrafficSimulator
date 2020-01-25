@@ -37,7 +37,7 @@ public class Simulation extends JPanel implements ActionListener {
 	private ArrayList<Vehicle> vehiclesDown;
 	private ArrayList<Vehicle> vehiclesLeft;
 	private ArrayList<Vehicle> vehiclesUp;
-	private String[] carImages = {"CTS/car1.png", "CTS/car2.png", "CTS/car3.png"};
+	private String[] carImages = {"Test/car1.png", "Test/car2.png", "Test/car3.png"};
 
 	private ArrayList<TrafficLight> trafficLights;
 	private int carSpawnTimer = 0;
@@ -243,35 +243,35 @@ public class Simulation extends JPanel implements ActionListener {
 
 		trafficLights = new ArrayList<TrafficLight>();
 
-		TrafficLight t1 = new TrafficLight(new File("CTS/trafficLight.png"), 320, 145, 180, 0, 1, this);
+		TrafficLight t1 = new TrafficLight(new File("Test/trafficLight.png"), 320, 145, 180, 0, 1, this);
 		t1.setLeft_light_pos(new Vector2(320,145));
 		t1.setForward_pos(new Vector2(320+23, 145));
 		t1.setRight_light_pos(new Vector2(320+47, 145));
 		trafficLights.add(t1);
 
-		TrafficLight t2 = new TrafficLight(new File("CTS/trafficLight.png"), 260, 520, 90, 1, 2, this);
+		TrafficLight t2 = new TrafficLight(new File("Test/trafficLight.png"), 260, 520, 90, 1, 2, this);
 		t2.setLeft_light_pos(new Vector2(282,500));
 		t2.setForward_pos(new Vector2(282,523));
 		t2.setRight_light_pos(new Vector2(282, 548));
 		trafficLights.add(t2);
 
-		TrafficLight t3 = new TrafficLight(new File("CTS/trafficLight.png"), 950, 580, 0, 0, 3, this);
+		TrafficLight t3 = new TrafficLight(new File("Test/trafficLight.png"), 950, 580, 0, 0, 3, this);
 		t3.setLeft_light_pos(new Vector2(950, 580));
 		t3.setForward_pos(new Vector2(950+25, 580));
 		t3.setRight_light_pos(new Vector2(950+48, 580));
 		trafficLights.add(t3);
 
-		TrafficLight t4 = new TrafficLight(new File("CTS/trafficLight.png"), 1010, 195, -90, 1, 4, this);
+		TrafficLight t4 = new TrafficLight(new File("Test/trafficLight.png"), 1010, 195, -90, 1, 4, this);
 		t4.setLeft_light_pos(new Vector2(1030, 175));
 		t4.setForward_pos(new Vector2(1030, 175+25));
 		t4.setRight_light_pos(new Vector2(1030, 175+47));
 		trafficLights.add(t4);
 
 		//First front vehicles
-		v1 = new Vehicle(new File("CTS/car2.png"), 6, VehicleState.MOVE_X, VehicleDirection.RIGHT, trafficLights.get(1),this, null, 0);
-		v2 = new Vehicle(new File("CTS/car2.png"), 5, VehicleState.MOVE_Y, VehicleDirection.DOWN, trafficLights.get(0),this, null, 0);
-		v3 = new Vehicle(new File("CTS/car2.png"), 6, VehicleState.MOVE_X, VehicleDirection.LEFT, trafficLights.get(3),this, null, 0);
-		v4 = new Vehicle(new File("CTS/car2.png"), 5, VehicleState.MOVE_Y, VehicleDirection.UP, trafficLights.get(2),this, null, 0);
+		v1 = new Vehicle(new File("Test/car2.png"), 6, VehicleState.MOVE_X, VehicleDirection.RIGHT, trafficLights.get(1),this, null, 0);
+		v2 = new Vehicle(new File("Test/car2.png"), 5, VehicleState.MOVE_Y, VehicleDirection.DOWN, trafficLights.get(0),this, null, 0);
+		v3 = new Vehicle(new File("Test/car2.png"), 6, VehicleState.MOVE_X, VehicleDirection.LEFT, trafficLights.get(3),this, null, 0);
+		v4 = new Vehicle(new File("Test/car2.png"), 5, VehicleState.MOVE_Y, VehicleDirection.UP, trafficLights.get(2),this, null, 0);
 
 		vehiclesRight = new ArrayList<Vehicle>();
 		vehiclesLeft = new ArrayList<Vehicle>();
@@ -281,8 +281,8 @@ public class Simulation extends JPanel implements ActionListener {
 
 		//car1.jpg->png
 		try {
-			car1 = ImageIO.read(new File("CTS/car1.png"));
-			mTerrain = ImageIO.read(new File("CTS/road1.jpg"));
+			car1 = ImageIO.read(new File("Test/car1.png"));
+			mTerrain = ImageIO.read(new File("Test/road1.jpg"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
